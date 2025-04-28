@@ -1,0 +1,437 @@
+/* General Reset */
+:root {
+  --iceblue: #D7EDEF;
+  --frostblue: #bfdfe2;
+  --butteryellow: #FEFAC2;
+  --orange: #ffd87b;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    display: flex;
+    background: #f5f5f5;
+    height:100%
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    height:100vh;
+    width: 250px;
+    background: white;
+    color: black;
+    padding: 20px 0;
+    position:fixed;
+    overflow-y: auto;
+    transition: all 0.3s;
+    box-shadow: 6px 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 10px 20px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden; 
+  }
+  
+  .menu {
+    list-style: none;
+    padding: 0 15px;
+  }
+  
+  .menu li {
+    margin: 10px 0;
+    border-radius: 5px;
+    transition: all 0.3s;
+  }
+  
+  .menu li:hover {
+    background: var(--butteryellow);
+  }
+  
+  .menu li.active {
+    background: var(--frostblue);
+  }
+  
+  .menu a {
+    display: flex;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+    padding: 12px 15px;
+  }
+  
+  .menu i {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  
+  .menu span {
+    transition: opacity 0.3s;
+  }
+  
+  .sidebar.collapsed .menu span {
+    opacity: 0;
+    width: 0;
+  }
+  
+  /* Main Content */
+  .main-content {
+    margin-left: 250px; /* Same as sidebar width */
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto; /* Enable scrolling for main content */
+    position: relative;
+    transition: margin-left 0.3s ease;
+  }
+  .sidebar.collapsed {
+    width: 80px;
+  }
+  .sidebar.collapsed + .main-content {
+    margin-left: 80px;
+  }
+  .sidebar-header{
+    position :relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+  } 
+
+  .toggle-btn {
+    background: var(--frostblue);
+    color: black;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    font-size:18px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .toggle-btn:hover {
+    background: #34495e;
+  }
+  .sidebar.collapsed .sidebar-header {
+    flex-direction: column; /* stacked: logo on top, button below */
+    align-items: center;
+  }
+.notes-container{
+  display:flex;
+  flex-direction: row;
+  margin:3rem;
+  gap:3rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+.add-note{
+  padding:50px;
+}
+.add{
+  font-size: 100px;
+  color:rgb(94, 89, 89);
+  border-radius: 100%;
+  border: 2px dashed rgb(132, 132, 132);
+  padding:8px 30px;
+  background-color: #f5f5f5;
+}
+.add-note h4{
+  position:relative;
+  margin: 0.5rem 0.7rem;
+  color:rgb(94, 89, 89);
+}
+.note{
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  width:280px;
+  height:330px;
+  background-color: var(--butteryellow);
+  border-radius: 20px;
+  padding:30px 20px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  position: relative;
+  
+}
+.note p{
+  overflow-y: auto; 
+  margin-bottom:12px;
+}
+
+.note-actions {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 15px;
+}
+.delete-btn,.edit-btn {
+  bottom: 20px;  /* Adjust for spacing from bottom */
+  right: 20px;   /* Adjust for spacing from right */
+  font-size: 1.2rem; /* Icon size */
+  cursor: pointer;   /* Change the cursor to indicate it's clickable */    /* Red color for delete */
+}
+
+.delete-btn:hover {
+  color: #c0392b; /* Darker red when hovering */
+}
+.note-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* pushes title left and edit icon right */
+}
+.note-header .edit-btn {
+  cursor: pointer;
+  font-size: 1.3rem; /* Make the icon a little smaller if you want */
+  color: #333; /* Icon color */
+}
+.note hr{
+  margin-bottom: 5px;
+  border:none;
+  height:1px;
+  background-color: black;
+}
+.popup-overlay{
+  background-color: rgb(60, 59, 59);
+  opacity:0.8;
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  display:none;
+}
+.notes-inputbox{
+  display:none;
+  background-color: white;
+  width:30%;
+  padding:40px;
+  border-radius:10px;
+  position:fixed;
+  top:13rem;
+  left:38rem;
+}
+.notes-inputbox input,textarea{
+  background:transparent;
+  border:none;
+  width:100%;
+  padding:5px;
+  margin:5px;
+  font-size: 20px;
+  border-bottom:solid black 1.5px;
+}
+.notes-inputbox button{
+  font-size: 15px;
+  background:transparent;
+  border: solid black 2px;
+  padding:10px;
+  margin:28px 8px;
+  box-shadow: 5px 3px 0 ;
+}
+.notes-inputbox input,textarea:focus{
+  outline:none;
+}
+
+.color-picker {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1rem;
+  gap: 10px;
+}
+
+.color-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.color-circle.selected {
+  border: 3px solid #000;
+}
+
+
+/* ===== TASK SECTION - CARD LAYOUT ===== */
+#tasks {
+  padding: 20px;
+}
+
+/* Card Container */
+.tasks-grid {
+  display: flex;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* Individual Task Cards */
+.task-card {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 300px;
+  height: fit-content;
+  border-top: 5px solid;
+}
+
+/* Card Headers */
+.task-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Color Coding */
+.task-card.daily {
+  border-top-color: var(--butteryellow); /* Blue */
+}
+.task-card.weekly {
+  border-top-color:var(--orange); /* Green */
+}
+.task-card.monthly {
+  border-top-color: var(--frostblue); /* Purple */
+}
+
+/* Task Input Area */
+.task-input {
+  display: flex;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+.task-input input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border 0.3s;
+}
+.task-input input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+.add-task {
+  background: var(--orange);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  width: 45px;
+  height: 45px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.add-task:hover {
+  background: var(--butteryellow);
+  color:#464444;
+}
+
+/* Task List */
+.task-items {
+  list-style: none;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+.task-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.task-item:last-child {
+  border-bottom: none;
+}
+
+/* Checkbox and Text */
+.task-item input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  margin-right: 15px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+}
+.task-item input[type="checkbox"]:checked {
+  background-color: #3498db;
+  border-color: #3498db;
+}
+.task-item input[type="checkbox"]:checked::after {
+  content: "✓";
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.task-item label {
+  flex: 1;
+  font-size: 16px;
+  cursor: pointer;
+  word-break: break-word;
+}
+.task-item.completed label {
+  text-decoration: line-through;
+  color: #95a5a6;
+}
+
+/* Delete Button */
+.delete-task {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 25px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  margin-left: 10px;
+}
+.delete-task:hover {
+  opacity: 1;
+}
+
+/* Scrollbar Styling */
+.task-items::-webkit-scrollbar {
+  width: 6px;
+}
+.task-items::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+.task-items::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+.task-items::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Responsive Layout */
+@media (max-width: 1000px) {
+  .tasks-grid {
+    flex-wrap: wrap;
+  }
+  .task-card {
+    min-width: calc(50% - 25px);
+  }
+}
+@media (max-width: 600px) {
+  .task-card {
+    min-width: 100%;
+  }
+}

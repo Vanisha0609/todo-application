@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Example</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href='https://unpkg.com/fullcalendar@6.1.9/main.min.css' rel='stylesheet' />
+  <script src='https://unpkg.com/fullcalendar@6.1.9/main.min.js'></script>
+
+</head>
+<body>
+  <div class="sidebar">
+    <div class="sidebar-header">
+    <div class="logo">TODO App</div>
+    <button class="toggle-btn">
+      <i class="fas fa-bars"></i>
+    </button>
+    </div>
+    <ul class="menu">
+      <li class="active" data-target="home">
+        <a href="#">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </a>
+      </li>
+      <li data-target="tasks">
+        <a href="#">
+          <i class="fas fa-tasks"></i>
+          <span>Tasks</span>
+        </a>
+      </li>
+      <li data-target="calendar">
+        <a href="#">
+          <i class="fas fa-calendar"></i>
+          <span>Calendar</span>
+        </a>
+      </li>
+      <li data-target="notes">
+        <a href="#">
+          <i class="fa-solid fa-note-sticky"></i>
+          <span>Notes</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="main-content">
+    <div class="content-section" id="home">
+      <h1>Home</h1>
+      <p>Welcome to your TODO app! Manage your tasks efficiently.</p>
+    </div>
+    
+    <div class="content-section" id="tasks" style="display: none;">
+      <h1>Tasks</h1>
+      <div class="tasks-grid">
+        <!-- Daily Card -->
+        <div class="task-card daily">
+          <h2><i class="fas fa-sun"></i> Today</h2>
+          <div class="task-input">
+            <input type="text" placeholder="Add daily task..." id="daily-input">
+            <button class="add-task" data-list="daily">+</button>
+          </div>
+          <ul class="task-items" id="daily-list"></ul>
+        </div>
+    
+        <!-- Weekly Card -->
+        <div class="task-card weekly">
+          <h2><i class="fas fa-calendar-week"></i> Weekly</h2>
+          <div class="task-input">
+            <input type="text" placeholder="Add weekly task..." id="weekly-input">
+            <button class="add-task" data-list="weekly">+</button>
+          </div>
+          <ul class="task-items" id="weekly-list"></ul>
+        </div>
+    
+        <!-- Monthly Card -->
+        <div class="task-card monthly">
+          <h2><i class="fas fa-calendar-alt"></i> Monthly</h2>
+          <div class="task-input">
+            <input type="text" placeholder="Add monthly task..." id="monthly-input">
+            <button class="add-task" data-list="monthly">+</button>
+          </div>
+          <ul class="task-items" id="monthly-list"></ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="content-section" id="calendar" style="display: none;">
+      <h1>Calendar</h1>      
+    </div>
+    
+    <div class="content-section" id="notes" style="display: none;">
+      <h1>My Notes</h1>
+      <div class="notes-container">
+        <!-- <div class="note">
+          
+        </div> -->
+        <div class="add-note">
+        <button class="add" id="add-btn">+</button>
+        <h4>Add new note</h4>
+        </div>
+        
+      </div>
+      <div class="popup-overlay"></div>
+      <div class="notes-inputbox">
+        <h3>Add your Note</h3>
+        <form>
+          <input type="text" placeholder="Title" id="note-title">
+          <textarea placeholder="type something...." id="note-input"></textarea>
+
+          <div class="color-picker">
+            <div class="color-circle" style="background-color: #ffd87b;" data-color="#ffd87b"></div>
+            <div class="color-circle" style="background-color: #fefac2;" data-color="#fefac2"></div>
+            <div class="color-circle" style="background-color: #bfdfe2;" data-color="#bfdfe2"></div>
+            <div class="color-circle" style="background-color: #d7edef;" data-color="#d7edef"></div>
+          </div>
+
+
+          <button id="add-note">ADD</button>
+          <button id="cancel-note">CANCEL</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
