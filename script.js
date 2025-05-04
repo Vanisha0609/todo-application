@@ -68,14 +68,17 @@ document.addEventListener('DOMContentLoaded', function() {
       var div=document.createElement("div")
       div.setAttribute("class","note")
       div.style.backgroundColor = selectedColor;
-      div.innerHTML=`<h5>${date}</h5>
+      div.innerHTML = `
+          <h5>${date}</h5>
           <h2>${notetitle.value}</h2>
           <hr>
-          <p>${description.value}</p>
+          <div class="note-content">
+            <div>${description.value}</div>
+          </div>
           <div class="note-actions">
-          <i class="fa-solid fa-pen-to-square edit-btn"></i>
-          <i class="fa-solid fa-trash delete-btn"></i>
-          </div>`
+            <i class="fa-solid fa-pen-to-square edit-btn"></i>
+            <i class="fa-solid fa-trash delete-btn"></i>
+          </div>`;
   
       container.insertBefore(div,container.firstChild);
       overlay.style.display="none"
@@ -97,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (e.target.classList.contains('fa-pen-to-square')) {
     const note = e.target.closest('.note');
     const title = note.querySelector('h2').textContent;
-    const content = note.querySelector('p').textContent;
+    const content = note.querySelector('.note-content div').textContent;
     const color = note.style.backgroundColor;
     
     // Fill the popup form with existing values
@@ -127,13 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
   }
   });
-
-    // Show Home section by default
-    document.getElementById('home').style.display = 'block';
-
-
-
-    // task list
+  document.getElementById('tasks').style.display = 'block';
   // Inside your DOMContentLoaded event:
 document.querySelectorAll('.add-task').forEach(button => {
   button.addEventListener('click', function() {
