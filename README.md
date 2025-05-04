@@ -2,7 +2,7 @@
 
 A feature-rich TODO application with notes, tasks, and calendar functionality built with HTML, CSS, and JavaScript.
 
-##FEATURES
+## FEATURES
 
 ### Notes Management
 
