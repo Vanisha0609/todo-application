@@ -27,3 +27,13 @@ A feature-rich TODO application with notes, tasks, and calendar functionality bu
 
 ![Screenshot 2025-05-04 160022](https://github.com/user-attachments/assets/ecfc5a75-f6f9-489f-a336-5cfea1ae43c2)
 
+## TECH STACK
+
+* HTML5
+
+* CSS3
+
+* JavaScript (ES6)
+
+* Font Awesome for icons
+
