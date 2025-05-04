@@ -37,3 +37,7 @@ A feature-rich TODO application with notes, tasks, and calendar functionality bu
 
 * Font Awesome for icons
 
+## live demo
+
+https://vanisha0609.github.io/todo-application/
+
