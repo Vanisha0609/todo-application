@@ -6,18 +6,13 @@ A feature-rich TODO application with notes, tasks, and calendar functionality bu
 
 ### Notes Management
 
-Create, edit, and delete notes <br>
-Color-coded notes
+*Create, edit, and delete notes <br>
+*Color-coded notes
 
 ### Task Management
 
-Basic task listing 
-to check out and delete tasks
+*Basic task listing   *to check out and delete tasks
 
 ### UI Features
 
-Collapsible sidebar
-
-Responsive design
-
-Clean, modern interface
+*Collapsible sidebar  *Responsive design  *Clean, modern interface
