@@ -11,8 +11,11 @@ A feature-rich TODO application with notes, tasks, and calendar functionality bu
 
 ### Task Management
 
-*Basic task listing   *to check out and delete tasks
+*Basic task listing  <br> 
+*to check out and delete tasks
 
 ### UI Features
 
-*Collapsible sidebar  *Responsive design  *Clean, modern interface
+*Collapsible sidebar <br> 
+*Responsive design  <br>
+*Clean, modern interface
