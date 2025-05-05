@@ -83,10 +83,10 @@
   
   /* Main Content */
   .main-content {
-    margin-left: 250px; /* Same as sidebar width */
+    margin-left: 250px; 
     padding: 20px;
     height: 100vh;
-    overflow-y: auto; /* Enable scrolling for main content */
+    overflow-y: auto; 
     position: relative;
     transition: margin-left 0.3s ease;
   }
@@ -119,7 +119,7 @@
     background: #34495e;
   }
   .sidebar.collapsed .sidebar-header {
-    flex-direction: column; /* stacked: logo on top, button below */
+    flex-direction: column; 
     align-items: center;
   }
 .notes-container{
@@ -174,24 +174,24 @@
   gap: 15px;
 }
 .delete-btn,.edit-btn {
-  bottom: 20px;  /* Adjust for spacing from bottom */
-  right: 20px;   /* Adjust for spacing from right */
-  font-size: 1.2rem; /* Icon size */
-  cursor: pointer;   /* Change the cursor to indicate it's clickable */    /* Red color for delete */
+  bottom: 20px;  
+  right: 20px;  
+  font-size: 1.2rem;
+  cursor: pointer;   
 }
 
 .delete-btn:hover {
-  color: #c0392b; /* Darker red when hovering */
+  color: #c0392b; 
 }
 .note-header {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* pushes title left and edit icon right */
+  justify-content: space-between; 
 }
 .note-header .edit-btn {
   cursor: pointer;
-  font-size: 1.3rem; /* Make the icon a little smaller if you want */
-  color: #333; /* Icon color */
+  font-size: 1.3rem; 
+  color: #333; 
 }
 .note hr{
   margin-bottom: 5px;
@@ -256,8 +256,6 @@
   border: 3px solid #000;
 }
 
-
-/* ===== TASK SECTION - CARD LAYOUT ===== */
 #tasks {
   padding: 20px;
 }
@@ -295,13 +293,13 @@
 
 /* Color Coding */
 .task-card.daily {
-  border-top-color: var(--butteryellow); /* Blue */
+  border-top-color: var(--butteryellow); 
 }
 .task-card.weekly {
-  border-top-color:var(--orange); /* Green */
+  border-top-color:var(--orange); 
 }
 .task-card.monthly {
-  border-top-color: var(--frostblue); /* Purple */
+  border-top-color: var(--frostblue);
 }
 
 /* Task Input Area */

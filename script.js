@@ -11,17 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
       item.addEventListener('click', function() {
         const targetId = this.getAttribute('data-target');
         
-        // Remove 'active' class from all menu items
         menuItems.forEach(i => i.classList.remove('active'));
-        // Add 'active' to clicked item
         this.classList.add('active');
         
-        // Hide all content sections
         contentSections.forEach(section => {
           section.style.display = 'none';
         });
         
-        // Show the target section
+        
         document.getElementById(targetId).style.display = 'block';
       });
     });
@@ -48,11 +45,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     colorCircles.forEach(circle => {
       circle.addEventListener("click", function() {
-        // Remove 'selected' class from all circles
+      
         colorCircles.forEach(c => c.classList.remove("selected"));
-        // Add 'selected' to clicked circle
+        
         this.classList.add("selected");
-        // Save the selected color
+       
         selectedColor = this.getAttribute("data-color");
       });
     });
@@ -89,9 +86,8 @@ document.addEventListener('DOMContentLoaded', function() {
       colorCircles.forEach(c => c.classList.remove("selected"));
     })
 
-    // Add this after your existing addnote event listener
   container.addEventListener('click', function(e) {
-  // Delete functionality
+
   if (e.target.classList.contains('fa-trash')) {
     e.target.closest('.note').remove();
   }
@@ -107,7 +103,6 @@ document.addEventListener('DOMContentLoaded', function() {
     notetitle.value = title;
     description.value = content;
     
-    // Set the selected color
     colorCircles.forEach(circle => {
       if (circle.getAttribute('data-color') === color) {
         circle.classList.add('selected');
@@ -116,17 +111,13 @@ document.addEventListener('DOMContentLoaded', function() {
         circle.classList.remove('selected');
       }
     });
-    
-    // Show the edit form
+  
     overlay.style.display = "block";
     popup.style.display = "block";
     
-    // Remove the old note when saving edits
     addnote.onclick = function(event) {
       event.preventDefault();
       note.remove();
-      // Rest of your existing add note functionality
-      // ...
     };
   }
   });
@@ -146,7 +137,6 @@ document.querySelectorAll('.add-task').forEach(button => {
   });
 });
 
-// Also allow Enter key to add tasks
 document.querySelectorAll('.task-input input').forEach(input => {
   input.addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
@@ -178,8 +168,7 @@ function addTask(listType, taskText) {
   `;
   
   list.appendChild(taskItem);
-  
-  // Add event listeners for the new task
+
   taskItem.querySelector('input').addEventListener('change', function() {
     taskItem.classList.toggle('completed', this.checked);
     saveTasks();
@@ -227,5 +216,4 @@ function loadTasks() {
 
 // Load tasks when page opens
 loadTasks();
-// Load/Save functions remain the same as previous example
   });
