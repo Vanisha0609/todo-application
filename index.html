@@ -6,8 +6,6 @@
   <title>Task management application</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
-  <link href='https://unpkg.com/fullcalendar@6.1.9/main.min.css' rel='stylesheet' />
-  <script src='https://unpkg.com/fullcalendar@6.1.9/main.min.js'></script>
 
 </head>
 <body>
@@ -87,7 +85,34 @@
     </div>
     
     <div class="content-section" id="calendar" style="display: none;">
-      <h1>Calendar</h1>      
+      <h1>Calendar</h1>
+      <div class="calendar-container">
+        <div id="calendar-view"></div>
+        <div class="calendar-tasks">
+          <h3 id="selected-date">Select a date to view/add tasks</h3>
+          <div class="calendar-task-input">
+            <input type="text" placeholder="Add task for selected date..." id="calendar-task-input">
+            <div class="color-picker">
+              <div class="color-circle" style="background-color: #ffd87b;" data-color="#ffd87b"></div>
+              <div class="color-circle" style="background-color: #fefac2;" data-color="#fefac2"></div>
+              <div class="color-circle" style="background-color: #bfdfe2;" data-color="#bfdfe2"></div>
+              <div class="color-circle" style="background-color: #d7edef;" data-color="#d7edef"></div>
+            </div>
+            <div class="icon-picker">
+              <label>Select Icon:</label>
+              <div class="icon-options">
+                <i class="fas fa-calendar-alt" data-icon="fa-calendar-alt" title="Event"></i>
+                <i class="fas fa-book" data-icon="fa-book" title="Study"></i>
+                <i class="fas fa-exclamation-circle" data-icon="fa-exclamation-circle" title="Important"></i>
+                <i class="fas fa-heart" data-icon="fa-heart" title="Personal"></i>
+                <i class="fas fa-briefcase" data-icon="fa-briefcase" title="Work"></i>
+              </div>
+            </div>
+            <button id="add-calendar-task">+ Add Task</button>
+          </div>
+          <div class="calendar-task-list" id="calendar-task-list"></div>
+        </div>
+      </div>
     </div>
     
     <div class="content-section" id="notes" style="display: none;">
@@ -124,5 +149,6 @@
     </div>
   </div>
   <script src="script.js"></script>
+  <script src="calendar.js"></script>
 </body>
 </html>
