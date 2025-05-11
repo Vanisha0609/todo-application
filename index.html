@@ -17,6 +17,12 @@
     </button>
     </div>
     <ul class="menu">
+      <li data-target="home">
+        <a href="#">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </a>
+      </li>
       <li data-target="tasks">
         <a href="#">
           <i class="fas fa-tasks"></i>
@@ -27,13 +33,6 @@
         <a href="#">
           <i class="fa-solid fa-note-sticky"></i>
           <span>Notes</span>
-        </a>
-      </li>
-      
-      <li data-target="home">
-        <a href="#">
-          <i class="fas fa-home"></i>
-          <span>Home</span>
         </a>
       </li>
   
@@ -47,7 +46,27 @@
     </ul>
   </div>
   <div class="main-content">
-    
+      <div class="content-section" id="home" style="display: none;">
+      <h1>Dashboard</h1>
+      <div class="home-grid">
+        <div class="mini-calendar-section">
+          <h3>Mini Calendar</h3>
+          <div id="mini-calendar"></div>
+        </div>
+        <div class="daily-tasks-preview">
+          <h3>Tasks on <span id="preview-date"></span></h3>
+          <ul id="daily-preview-list" class="task-list"></ul>
+          <div class="task-input">
+            <input type="text" id="daily-preview-input" placeholder="Add a task">
+            <button class="add-task" data-list="daily-preview">+</button>
+        </div>
+      </div>
+        <div class="recent-notes">
+          <h3>Recent Notes</h3>
+          <div class="recent-notes-container"></div>
+        </div>
+      </div>
+    </div>
     
     <div class="content-section" id="tasks" style="display: none;">
       <h1>Tasks</h1>
@@ -150,5 +169,6 @@
   </div>
   <script src="script.js"></script>
   <script src="calendar.js"></script>
+  <script src="home.js"></script>
 </body>
 </html>

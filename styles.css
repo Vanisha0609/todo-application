@@ -674,3 +674,61 @@
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
+
+
+.home-grid {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+
+.mini-calendar-section {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.recent-notes {
+  grid-column: span 2;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.recent-notes-container .note {
+  margin-bottom: 10px;
+}
+
+.calendar-day.mini {
+  position: relative;
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.task-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+
+.recent-notes-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.recent-notes-container .note {
+  width:280px;
+  height:330px;
+  box-sizing: border-box;
+  padding: 1rem;
+  border-radius: 10px;
+  background: #fff; /* optional for contrast */
+}
